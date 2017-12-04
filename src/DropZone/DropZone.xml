@@ -1,31 +1,26 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<widget id="DropZone.widget.DropZone" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
+<widget id="DropZone.widget.DropZone" needsEntityContext="false" xmlns="http://www.mendix.com/widget/1.0/">
     <name>DropZone</name>
     <description>The description of this widget.</description>
 
     <icon />
 
     <properties>
-        <property key="name" type="string" required="false" defaultValue="">
-            <caption>Name</caption>
-            <category>Appearance</category>
-            <description>The name visible within the widget.</description>
-        </property>
-        <property key="mainImage" type="image" required="false">
-            <caption>Image</caption>
-            <category>Appearance</category>
-            <description>Select image</description>
+        <property key="phaseTitle" type="string" required="false" defaultValue="">
+            <caption>Title</caption>
+            <category>Phase</category>
+            <description>The title of this phase.</description>
         </property>
         <property key="dataSourceMf" type="microflow" required="false" defaultValue="">
             <caption>Data Source Microflow</caption>
             <category>Behavior</category>
-            <description>The microflow used to manipulate the data.</description>
+            <description>Where are the projects coming from?</description>
             <returnType type="Boolean"></returnType>
         </property>
         <property key="onDropMf" type="microflow" required="false" defaultValue="">
             <caption>On Drop Microflow</caption>
             <category>Behavior</category>
-            <description>The microflow that is triggered when widget is droped into a zone.</description>
+            <description>The microflow that is triggered when a project is dropped into a new zone.</description>
             <returnType type="Boolean"></returnType>
         </property>
     </properties>

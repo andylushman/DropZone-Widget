@@ -1,17 +1,14 @@
 .widgetname {
-
+  min-height: 250px;
+  background-color: lightgray;
 }
 
-.widgetname-message {
-
+.title {
+  text-align: center;
+  overflow: auto;
+  font-size: 15px;
 }
 
-.input-group-addon {
-    clear: both;
-    padding: 2px 6px;
-}
-
-.widgetname-infoTextNode {
-    padding: 0.8em 1em;
-    margin-top: 10px;
+.card {
+  display: none;
 }

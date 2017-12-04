@@ -42,17 +42,19 @@ define([
     var $ = _jQuery.noConflict(true);
 
     // Declare widget's prototype.
-    return declare("counter.widget.counter", [ _WidgetBase, _TemplatedMixin ], {
+    return declare("DropZone.widget.DropZone", [ _WidgetBase, _TemplatedMixin ], {
         // _TemplatedMixin will create our dom node using this HTML template.
         templateString: widgetTemplate,
 
         // DOM elements
         //Listed as a reminder for data-dojo-attach-points. Not needed.
-        nameNode: null,
-
+        phaseTitleNode: null,
+        cardNode: null,
 
         // Parameters configured in the Modeler. Listed for a reminder not needed.
-        name: "",
+        phaseTitle: "",
+        dataSourceMf: "",
+        onDropMf: "",
 
         // Internal variables. Non-primitives created in the prototype are shared between all widget instances.
           _contextObj: null,
@@ -81,7 +83,7 @@ define([
             console.log("postCreate function");
 
             //Putting a string message into the dom
-            dojoHtml.set(this.nameNode, this.name);
+            dojoHtml.set(this.phaseTitleNode, this.phaseTitle);
 
         },
 
@@ -91,8 +93,6 @@ define([
             console.log("Update function");
             this._contextObj = obj;
             callback();
-            this.setName()
-
         },
 
         _execMf: function (mf, guid, cb) {
