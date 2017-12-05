@@ -92,15 +92,13 @@ define([
             console.log("Update function");
             this._contextObj = obj;
             callback();
-
+            this._updateRendering();
             this.runMf();
         },
 
-        runMf: function(){
-          //Trigger Data Scource Microflow if it's available
-          if (this.dataSourceMf !== "") {
-              this._execMf(this.dataSourceMf, this._contextObj.getGuid());
-          }
+        _updateRendering: function() {
+          console.log("updateRendering function");
+          console.log(this.entityToSelect.split("/"));
         },
 
         _execMf: function (mf, guid, cb) {
@@ -115,12 +113,33 @@ define([
                         if (cb && typeof cb === "function") {
                             cb(objs);
                         }
+
+
+                        $.each(objs, lang.hitch(this, function(int, value){
+                          console.log("items in object: " + objs);
+
+
+                        }));
+
+
+
+
+
+
+
                     }),
                     error: function (error) {
                         console.debug(error.description);
                     }
                 }, this);
             }
+        },
+
+        runMf: function(){
+          //Trigger Data Scource Microflow if it's available
+          if (this.dataSourceMf !== "") {
+              this._execMf(this.dataSourceMf, this._contextObj.getGuid());
+          }
         }
 
     });

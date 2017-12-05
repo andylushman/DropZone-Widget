@@ -18,7 +18,7 @@
         </property>
         <property key="dataSourceMf" type="microflow" required="true" defaultValue="">
             <caption>Data Source Microflow</caption>
-            <category>Behavior</category>
+            <category>Data Source</category>
             <description>Where are the projects coming from?</description>
             <returnType type="Object" isList="true" entityProperty="entityToSelect"></returnType>
         </property>
