@@ -84,7 +84,6 @@ define([
 
             //Putting a string message into the dom
             dojoHtml.set(this.phaseTitleNode, this.phaseTitle);
-
         },
 
         //Needed to update this._contextObj so that its not null and therefore I can call a microflow in _execMf()
@@ -93,6 +92,18 @@ define([
             console.log("Update function");
             this._contextObj = obj;
             callback();
+
+            // //Trigger Data Scource Microflow if it's available
+            // if (this.dataSourceMf !== "") {
+            //     this._execMf(this.dataSourceMf, this._contextObj.getGuid());
+            // }
+        },
+
+        runMf: function(){
+          //Trigger Data Scource Microflow if it's available
+          if (this.dataSourceMf !== "") {
+              this._execMf(this.dataSourceMf, this._contextObj.getGuid());
+          }
         },
 
         _execMf: function (mf, guid, cb) {
