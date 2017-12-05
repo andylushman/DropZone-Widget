@@ -93,10 +93,7 @@ define([
             this._contextObj = obj;
             callback();
 
-            // //Trigger Data Scource Microflow if it's available
-            // if (this.dataSourceMf !== "") {
-            //     this._execMf(this.dataSourceMf, this._contextObj.getGuid());
-            // }
+            this.runMf();
         },
 
         runMf: function(){

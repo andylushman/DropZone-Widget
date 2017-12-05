@@ -11,11 +11,16 @@
             <category>Phase</category>
             <description>The title of this phase.</description>
         </property>
-        <property key="dataSourceMf" type="microflow" required="false" defaultValue="">
+        <property key="entityToSelect" type="entity" allowNonPersistableEntities="true">
+            <caption>Entity to select</caption>
+            <category>Data Source</category>
+            <description>The entity type that is returned as list from the microflow.</description>
+        </property>
+        <property key="dataSourceMf" type="microflow" required="true" defaultValue="">
             <caption>Data Source Microflow</caption>
             <category>Behavior</category>
             <description>Where are the projects coming from?</description>
-            <returnType type="Boolean"></returnType>
+            <returnType type="Object" isList="true" entityProperty="entityToSelect"></returnType>
         </property>
         <property key="onDropMf" type="microflow" required="false" defaultValue="">
             <caption>On Drop Microflow</caption>
