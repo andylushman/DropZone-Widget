@@ -1,16 +1,40 @@
 .widgetname {
   min-height: 250px;
-  background-color: lightgray;
+  background-color: #B2B090;
+  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+/* (Optional) Apply a "closed-hand" cursor during drag operation. */
+.widgetname:active {
+   cursor: grabbing;
+   cursor: -moz-grabbing;
+   cursor: -webkit-grabbing;
 }
 
 .title {
   text-align: center;
   overflow: auto;
   font-size: 15px;
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+  text-decoration: underline;
 }
 
-.card {
-  display: none;
+.project {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 20px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  overflow: auto;
+  background-color: #00A4FF;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.project:hover {
+    background: #eee;
 }
 
 .button {

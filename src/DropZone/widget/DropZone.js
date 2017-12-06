@@ -93,12 +93,12 @@ define([
             this._contextObj = obj;
             callback();
             this._updateRendering();
-            this.runMf();
+
         },
 
         _updateRendering: function() {
           console.log("updateRendering function");
-          console.log(this.entityToSelect.split("/"));
+          this.runMf();
         },
 
         _execMf: function (mf, guid, cb) {
@@ -109,23 +109,19 @@ define([
                         applyto: "selection",
                         guids: [guid]
                     },
-                    callback: lang.hitch(this, function (objs) {
+                    callback: lang.hitch(this, function (obj) {
                         if (cb && typeof cb === "function") {
                             cb(objs);
                         }
 
+                        var htmlElements = "";
+                        for (var i = 0; i < obj.length; i++) {
+                          var project = obj[i]
+                          var projectName = project.jsonData.attributes.Name.value;
+                           htmlElements += '<div class="project" draggable= "true" data-dojo-attach-event="ondragstart= drag(event)">' + projectName + '</div>';
+                        };
 
-                        $.each(objs, lang.hitch(this, function(int, value){
-                          console.log("items in object: " + objs);
-
-
-                        }));
-
-
-
-
-
-
+                        dojoHtml.set(this.projectNode, htmlElements);
 
                     }),
                     error: function (error) {
@@ -135,11 +131,31 @@ define([
             }
         },
 
+        /********************
+         OTHER FUNCTIONS
+        ********************/
+
+        //Trigger Microflow
         runMf: function(){
           //Trigger Data Scource Microflow if it's available
           if (this.dataSourceMf !== "") {
               this._execMf(this.dataSourceMf, this._contextObj.getGuid());
           }
+        },
+
+        //Drag and Drop Functions
+        allowDrop: function(ev) {
+          ev.preventDefault();
+        },
+
+        drag: function(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        },
+
+        drop: function(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
         }
 
     });
