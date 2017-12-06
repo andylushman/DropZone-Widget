@@ -118,7 +118,7 @@ define([
                         for (var i = 0; i < obj.length; i++) {
                           var project = obj[i]
                           var projectName = project.jsonData.attributes.Name.value;
-                           htmlElements += '<div class="project" draggable= "true" data-dojo-attach-event="ondragstart= drag(event)">' + projectName + '</div>';
+                           htmlElements += "<div class='project' draggable='true' data-dojo-attach-event='onclick: drag, ondrop: drop, ondragover: allowDrop'>" + projectName + "</div>";
                         };
 
                         dojoHtml.set(this.projectNode, htmlElements);
@@ -145,17 +145,23 @@ define([
 
         //Drag and Drop Functions
         allowDrop: function(ev) {
+          console.log("allowDrop function triggered");
           ev.preventDefault();
+
         },
 
         drag: function(ev) {
-            ev.dataTransfer.setData("text", ev.target.id);
+          console.log("drag function triggered");
+          ev.dataTransfer.setData("text", ev.target.id);
+
         },
 
         drop: function(ev) {
+            console.log("drop function triggered");
             ev.preventDefault();
             var data = ev.dataTransfer.getData("text");
             ev.target.appendChild(document.getElementById(data));
+
         }
 
     });
