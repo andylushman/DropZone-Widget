@@ -22,7 +22,7 @@
             <description>Where are the projects coming from?</description>
             <returnType type="Object" isList="true" entityProperty="entityToSelect"></returnType>
         </property>
-        <property key="onDropMf" type="microflow" required="false" defaultValue="">
+        <property key="onDropMf" type="microflow" required="false" defaultValue="" entityProperty="entityToSelect">
             <caption>On Drop Microflow</caption>
             <category>Behavior</category>
             <description>The microflow that is triggered when a project is dropped into a new zone.</description>

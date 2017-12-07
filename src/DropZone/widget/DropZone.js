@@ -58,6 +58,7 @@ define([
 
         // Internal variables. Non-primitives created in the prototype are shared between all widget instances.
           _contextObj: null,
+          // projects: [],
 
 
         /********************
@@ -114,15 +115,41 @@ define([
                         }
 
                         var divNum = this.class;
-                      
+
                         var htmlElements = "";
                         for (var i = 0; i < obj.length; i++) {
                           var project = obj[i]
+                          var projectGuid = project.jsonData.guid;
                           var projectName = project.jsonData.attributes.Name.value;
-                           htmlElements += "<div id= 'div" + divNum + [i] + "' class='project' draggable='true' data-dojo-attach-event='ondragstart: drag, ondrop: drop, ondragover: allowDrop'>" + projectName + "</div>";
+                           htmlElements += "<div id= 'div" + divNum + [i] + "' class='project' guid= '" + projectGuid + "' draggable='true' data-dojo-attach-event='onclick: findGuid, ondragstart: drag, ondrop: drop, ondragover: allowDrop'>" + projectName + "</div>";
+
+                           // this.projects.push(project);
                         };
 
+                         // console.log(this.projects);
+
                         dojoHtml.set(this.projectNode, htmlElements);
+
+                    }),
+                    error: function (error) {
+                        console.debug(error.description);
+                    }
+                }, this);
+            }
+        },
+
+        _execOnDropMf: function (mf, guid, cb) {
+            logger.debug(this.id + "._execMf");
+            if (mf && guid) {
+                mx.ui.action(mf, {
+                    params: {
+                        applyto: "selection",
+                        guids: [guid]
+                    },
+                    callback: lang.hitch(this, function (obj) {
+                        if (cb && typeof cb === "function") {
+                            cb(objs);
+                        }
 
                     }),
                     error: function (error) {
@@ -144,10 +171,26 @@ define([
           }
         },
 
+
+        //Find Guid
+        // findGuid: function(){
+        //   console.log("findGuid triggered");
+        //   var i = this.projects.length;
+        //   var ownerData;
+        //
+        //   while(i--) {
+        //       if(selectedGroup.owner == users[i].id) {
+        //           ownerData = users[i];
+        //           break;
+        //       }
+        //   }
+        // },
+
         //Drag and Drop Functions
         allowDrop: function(ev) {
           console.log("allowDrop function triggered");
           ev.preventDefault();
+          console.log(this);
 
         },
 
@@ -163,7 +206,13 @@ define([
             var data = ev.dataTransfer.getData("text");
             ev.target.appendChild(document.getElementById(data));
 
+            //Trigger Data Scource Microflow if it's available
+            if (this.onDropMf !== "") {
+                this._execOnDropMf(this.onDropMf, this._contextObj.getGuid());
+            }
+
         }
+
 
     });
 });
