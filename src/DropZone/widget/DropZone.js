@@ -121,7 +121,7 @@ define([
                           var project = obj[i]
                           var projectGuid = project.jsonData.guid;
                           var projectName = project.jsonData.attributes.Name.value;
-                           htmlElements += "<div id= 'div" + divNum + [i] + "' class='project' guid= '" + projectGuid + "' draggable='true' data-dojo-attach-event='onclick: findGuid, ondragstart: drag, ondrop: drop, ondragover: allowDrop'>" + projectName + "</div>";
+                           htmlElements += "<div id= 'div" + divNum + [i] + "' class='project' guid= '" + projectGuid + "' draggable='true'>" + projectName + "</div>";
 
                            // this.projects.push(project);
                         };
@@ -199,7 +199,7 @@ define([
 
             //Trigger Data Scource Microflow if it's available
             if (this.onDropMf !== "") {
-                this._execOnDropMf(this.onDropMf, this._contextObj.getGuid());
+                this._execOnDropMf(this.onDropMf, "6192449487635837");
             }
 
         }
