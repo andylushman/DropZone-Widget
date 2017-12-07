@@ -173,24 +173,15 @@ define([
 
 
         //Find Guid
-        // findGuid: function(){
-        //   console.log("findGuid triggered");
-        //   var i = this.projects.length;
-        //   var ownerData;
-        //
-        //   while(i--) {
-        //       if(selectedGroup.owner == users[i].id) {
-        //           ownerData = users[i];
-        //           break;
-        //       }
-        //   }
-        // },
+        findGuid: function(){
+          console.log("triggered findGuid");
+          console.log(this.projectNode.innerHTML);
+        },
 
         //Drag and Drop Functions
         allowDrop: function(ev) {
           console.log("allowDrop function triggered");
           ev.preventDefault();
-          console.log(this);
 
         },
 
