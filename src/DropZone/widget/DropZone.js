@@ -60,7 +60,6 @@ define([
           _contextObj: null,
 
 
-
         /********************
          TEMPLATE FUNCTIONS
         ********************/
@@ -114,11 +113,13 @@ define([
                             cb(objs);
                         }
 
+                        var divNum = this.class;
+                        console.log(divNum);
                         var htmlElements = "";
                         for (var i = 0; i < obj.length; i++) {
                           var project = obj[i]
                           var projectName = project.jsonData.attributes.Name.value;
-                           htmlElements += "<div class='project' draggable='true' data-dojo-attach-event='onclick: drag, ondrop: drop, ondragover: allowDrop'>" + projectName + "</div>";
+                           htmlElements += "<div id= 'div" + divNum + [i] + "' class='project' draggable='true' data-dojo-attach-event='ondragstart: drag, ondrop: drop, ondragover: allowDrop'>" + projectName + "</div>";
                         };
 
                         dojoHtml.set(this.projectNode, htmlElements);
