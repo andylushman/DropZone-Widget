@@ -114,7 +114,7 @@ define([
                         }
 
                         var divNum = this.class;
-                        console.log(divNum);
+                      
                         var htmlElements = "";
                         for (var i = 0; i < obj.length; i++) {
                           var project = obj[i]
