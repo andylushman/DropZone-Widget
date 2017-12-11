@@ -26,7 +26,7 @@
             <caption>On Drop Microflow</caption>
             <category>Behavior</category>
             <description>The microflow that is triggered when a project is dropped into a new zone.</description>
-            <returnType type="Boolean"></returnType>
+            <returnType type="Object" isList="false" entityProperty="entityToSelect"></returnType>
         </property>
     </properties>
 </widget>

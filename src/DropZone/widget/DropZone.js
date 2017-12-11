@@ -191,6 +191,13 @@ define([
             var guid = ev.dataTransfer.getData("guid");
             console.log("Data id: " + data);
 
+            var newStatus = this.phaseTitle;
+
+
+
+            console.log("New Status: " + newStatus);
+
+
             //Trigger Data Scource Microflow if it's available
             this._execOnDropMf(this.onDropMf, data);
         }
