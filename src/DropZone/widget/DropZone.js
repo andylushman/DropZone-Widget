@@ -58,7 +58,6 @@ define([
 
         // Internal variables. Non-primitives created in the prototype are shared between all widget instances.
           _contextObj: null,
-          // projects: [],
 
 
         /********************
@@ -67,20 +66,17 @@ define([
 
         _setupEvents: function () {
             logger.debug(this.id + "._setupEvents");
-            console.log("setupEvents function");
         },
 
         // dojo.declare.constructor is called to construct the widget instance. Implement to initialize non-primitive properties.
         constructor: function () {
             logger.debug(this.id + ".constructor");
             this._handles = [];
-            console.log("constructor function");
         },
 
         // dijit._WidgetBase.postCreate is called after constructing the widget. Implement to do extra setup work.
         postCreate: function () {
             logger.debug(this.id + ".postCreate function");
-            console.log("postCreate function");
 
             //Putting a string message into the dom
             dojoHtml.set(this.phaseTitleNode, this.phaseTitle);
@@ -89,15 +85,12 @@ define([
         //Needed to update this._contextObj so that its not null and therefore I can call a microflow in _execMf()
         update: function (obj, callback) {
             logger.debug(this.id + ".update");
-            console.log("Update function");
             this._contextObj = obj;
             callback();
             this._updateRendering();
-
         },
 
         _updateRendering: function() {
-          console.log("updateRendering function");
           this.runMf();
         },
 
@@ -120,8 +113,11 @@ define([
                         for (var i = 0; i < obj.length; i++) {
                           var project = obj[i]
                           var projectGuid = project.jsonData.guid;
+
                           var projectName = project.jsonData.attributes.Name.value;
-                           htmlElements += "<div id= 'div" + divNum + [i] + "' class='project' guid= '" + projectGuid + "' draggable='true'>" + projectName + "</div>";
+                          var id = "'div" + divNum + [i] + "'";
+
+                           htmlElements += "<div id=" + projectGuid + " class='project' draggable='true'>" + projectName + "</div>";
 
                            // this.projects.push(project);
                         };
@@ -173,35 +169,30 @@ define([
 
 
         //Find Guid
-        findGuid: function(){
-          console.log("triggered findGuid");
-          console.log(this.projectNode.innerHTML);
-        },
+        // findGuid: function(){
+        //   console.log("triggered findGuid");
+        //   console.log(this.projectNode.innerHTML);
+        // },
 
         //Drag and Drop Functions
         allowDrop: function(ev) {
-          console.log("allowDrop function triggered");
           ev.preventDefault();
-
         },
 
         drag: function(ev) {
-          console.log("drag function triggered");
-          ev.dataTransfer.setData("text", ev.target.id);
-
+          ev.dataTransfer.setData("id", ev.target.id);
         },
 
         drop: function(ev) {
-            console.log("drop function triggered");
             ev.preventDefault();
-            var data = ev.dataTransfer.getData("text");
+            var data = ev.dataTransfer.getData("id");
             ev.target.appendChild(document.getElementById(data));
 
-            //Trigger Data Scource Microflow if it's available
-            if (this.onDropMf !== "") {
-                this._execOnDropMf(this.onDropMf, "6192449487635837");
-            }
+            var guid = ev.dataTransfer.getData("guid");
+            console.log("Data id: " + data);
 
+            //Trigger Data Scource Microflow if it's available
+            this._execOnDropMf(this.onDropMf, data);
         }
 
 
