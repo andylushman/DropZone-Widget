@@ -58,6 +58,7 @@ define([
 
         // Internal variables. Non-primitives created in the prototype are shared between all widget instances.
           _contextObj: null,
+          status: "",
 
 
         /********************
@@ -147,6 +148,21 @@ define([
                             cb(objs);
                         }
 
+                        var mxObject = obj[0];
+
+                        mxObject.set("Status", this.status);
+
+
+                        mx.data.commit({
+                            mxobj: mxObject,
+                            callback: function(){
+                                console.log("Saved it");
+                            },
+                            error: function(error){
+                                console.log("Could not commit the obj with error: " + error);
+                            }
+                        });
+
                     }),
                     error: function (error) {
                         console.debug(error.description);
@@ -189,14 +205,8 @@ define([
             ev.target.appendChild(document.getElementById(data));
 
             var guid = ev.dataTransfer.getData("guid");
-            console.log("Data id: " + data);
-
             var newStatus = this.phaseTitle;
-
-
-
-            console.log("New Status: " + newStatus);
-
+            this.status = newStatus;
 
             //Trigger Data Scource Microflow if it's available
             this._execOnDropMf(this.onDropMf, data);
