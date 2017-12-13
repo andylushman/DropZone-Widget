@@ -156,7 +156,7 @@ define([
                         mx.data.commit({
                             mxobj: mxObject,
                             callback: function(){
-                                console.log("Saved it");
+                                // console.log("Saved it");
                             },
                             error: function(error){
                                 console.log("Could not commit the obj with error: " + error);
@@ -206,7 +206,10 @@ define([
 
             var guid = ev.dataTransfer.getData("guid");
             var newStatus = this.phaseTitle;
-            this.status = newStatus;
+
+            var underscoreNewStatus = newStatus.split(' ').join('_');
+
+            this.status = underscoreNewStatus;
 
             //Trigger Data Scource Microflow if it's available
             this._execOnDropMf(this.onDropMf, data);

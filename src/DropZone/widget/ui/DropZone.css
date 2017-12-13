@@ -4,7 +4,8 @@
   cursor: grab;
   cursor: -moz-grab;
   cursor: -webkit-grab;
-  border: 1px solid black;
+  border: 1px solid #666;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* (Optional) Apply a "closed-hand" cursor during drag operation. */
@@ -18,17 +19,18 @@
   text-align: center;
   overflow: auto;
   font-size: 15px;
-  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
-  text-decoration: underline;
+  font-family: 'Open Sans',sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 .project {
-  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+  font-family: 'Open Sans',sans-serif;
+  -webkit-font-smoothing: antialiased;
   margin: 20px;
   text-align: center;
   border: 1px solid black;
   border-radius: 10px;
-  overflow: auto;
+  overflow: hidden;
   background-color: #ea5c0f;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
