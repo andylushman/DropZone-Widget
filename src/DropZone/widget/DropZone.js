@@ -112,18 +112,25 @@ define([
 
                         var htmlElements = "";
                         for (var i = 0; i < obj.length; i++) {
-                          var project = obj[i]
+console.log(obj[i]);
+                          var project = obj[i];
                           var projectGuid = project.jsonData.guid;
-
-                          var projectName = project.jsonData.attributes.Name.value;
+                          var image = obj[i].get("/file?guid=" + projectGuid + "&csrfToken=" + mx.session.getCSRFToken());
+                          var header = project.jsonData.attributes.Header.value;
+                          var subHeader = project.jsonData.attributes.SubHeader.value;
+                          var description = project.jsonData.attributes.Description.value;
                           var id = "'div" + divNum + [i] + "'";
+                          var imageDiv = "<div class = 'image'>" + image + "</div>";
+                          var headerDiv = "<div class = 'header'>" + header + "</div>";
+                          var subHeaderDiv = "<div class = 'subHeader'>" + subHeader + "</div>";
+                          var descriptionDiv = "<div class = 'description'>" + description + "</div>";
 
-                           htmlElements += "<div id=" + projectGuid + " class='project' draggable='true'>" + projectName + "</div>";
+                           htmlElements += "<div id=" + projectGuid + " class='project' draggable='true'>" + imageDiv + headerDiv + subHeaderDiv + descriptionDiv + "</div>";
 
-                           // this.projects.push(project);
+
+
                         };
 
-                         // console.log(this.projects);
 
                         dojoHtml.set(this.projectNode, htmlElements);
 

@@ -4,8 +4,11 @@
   cursor: grab;
   cursor: -moz-grab;
   cursor: -webkit-grab;
-  border: 1px solid #666;
+  /* border: 1px solid #666; */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 15px;
+  background-color: #ececec;
+  padding: 10px;
 }
 
 /* (Optional) Apply a "closed-hand" cursor during drag operation. */
@@ -24,19 +27,51 @@
 }
 
 .project {
-  font-family: 'Open Sans',sans-serif;
+  color: #999999;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding: 1rem;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   margin: 20px;
-  text-align: center;
-  border: 1px solid black;
+  border: 5px solid #525a75;
   border-radius: 10px;
   overflow: hidden;
-  background-color: #ea5c0f;
+  background-color: #ffffff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .project:hover {
     background: #eee;
+}
+
+.header {
+  color: #696969;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.subHeader {
+  font-size: 1.1rem;
+}
+
+.description {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  font-size: 0.975rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  display: block;
+  -webkit-margin-before: 1em;
 }
 
 .button {
