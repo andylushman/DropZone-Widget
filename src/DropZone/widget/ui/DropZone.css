@@ -35,16 +35,25 @@
   padding: 1rem;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  margin: 20px;
-  border: 5px solid #525a75;
+  /* border: 2px solid #32404d; */
   border-radius: 10px;
   overflow: hidden;
   background-color: #ffffff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: background-color 0.5s ease;
+  margin: auto;
+  margin-bottom: 10px;
+  max-width: 50%;
 }
 
 .project:hover {
-    background: #eee;
+    background: #a8c1e0;
+}
+
+.image {
+  max-width:100%;
+  max-height:100%;
+  pointer-events: none;
 }
 
 .header {
@@ -57,6 +66,7 @@
   font-style: normal;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  margin-top: 1.5rem;
 }
 
 .subHeader {

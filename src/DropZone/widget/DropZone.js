@@ -112,15 +112,16 @@ define([
 
                         var htmlElements = "";
                         for (var i = 0; i < obj.length; i++) {
-console.log(obj[i]);
                           var project = obj[i];
                           var projectGuid = project.jsonData.guid;
-                          var image = obj[i].get("/file?guid=" + projectGuid + "&csrfToken=" + mx.session.getCSRFToken());
+                          var image = "/file?guid=" + projectGuid + "&csrfToken=" + mx.session.getCSRFToken();
+                          var hasImage = project.jsonData.attributes.Name.value
                           var header = project.jsonData.attributes.Header.value;
                           var subHeader = project.jsonData.attributes.SubHeader.value;
                           var description = project.jsonData.attributes.Description.value;
                           var id = "'div" + divNum + [i] + "'";
-                          var imageDiv = "<div class = 'image'>" + image + "</div>";
+
+                          var imageDiv = hasImage != "" ? "<div><img src='" + image + "' class = 'image'></div>" : "";
                           var headerDiv = "<div class = 'header'>" + header + "</div>";
                           var subHeaderDiv = "<div class = 'subHeader'>" + subHeader + "</div>";
                           var descriptionDiv = "<div class = 'description'>" + description + "</div>";
