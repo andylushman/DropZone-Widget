@@ -1,12 +1,9 @@
 # Drop Zone Widget
 
-## Usage
-
 This widget is useful for:
 
  * Dragging and dropping objects into categories
  * Changing an attribute based on the drop zone category
-
 
 
 ## Screenshots:
@@ -31,7 +28,7 @@ This widget is useful for:
 **Widgets**  
 ![Widgets](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/Widgets.PNG)
 
-**Data Source**  
+### Data Source  
 ![Data Source](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/DataSource.PNG)
 
 **Open Project Microflow**  
