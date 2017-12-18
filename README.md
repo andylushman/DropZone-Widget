@@ -30,7 +30,7 @@ This widget is useful for:
 ### Data Source  
 ![Data Source](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/DataSource.PNG)
 
-### Open Project Microflow  
+### Retrieve Open Project Microflow with Xpath Constraint [Status='Open']  
 ![Open Projects Microflow](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/OpenProjectsMF.PNG)
 
 ### Behavior  
@@ -39,5 +39,5 @@ This widget is useful for:
 ### On Drop Mircoflow  
 ![On Drop Microflow](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/OnDropMF.PNG)
 
-### Phase  
+### Phase  (Must be same is Status Enum attributes)
 ![Phase](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/Phase.PNG)
