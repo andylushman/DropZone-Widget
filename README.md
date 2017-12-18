@@ -1,5 +1,7 @@
 # Drop Zone Widget
 
+## Usage
+
 This widget is useful for:
 
  * Dragging and dropping objects into categories
@@ -7,20 +9,20 @@ This widget is useful for:
 
 
 
-### Screenshots:
+## Screenshots:
 
-Example of 3 widgets setup with the attributes of Open, In Progress, and Closed:
+### Example of 3 widgets setup with the attributes of Open, In Progress, and Closed:
 ![3 Widgets with attributes](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/3Widgets.PNG)
 
-New Object:
+### New Object:
 ![New object](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/NewObject.PNG)
 
-Moving and object and changing the attribute:
+### Moving and object and changing the attribute:
 ![On hover](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/OnHover.PNG)
 ![On drop](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/OnDrop.PNG)
 
 
-Setup:
+### Setup:
 ![Domain Model](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/DomainModel.PNG)
 ![Widgets](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/Widgets.PNG)
 ![Data Source](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/DataSource.PNG)
