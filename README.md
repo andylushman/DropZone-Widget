@@ -21,24 +21,24 @@ This widget is useful for:
 ![On drop](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/OnDrop.PNG)
 
 
-### Setup:
-**Domain Model**  
+## Setup:
+### Domain Model  
 ![Domain Model](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/DomainModel.PNG)
 
-**Widgets**  
+### Widgets  
 ![Widgets](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/Widgets.PNG)
 
 ### Data Source  
 ![Data Source](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/DataSource.PNG)
 
-**Open Project Microflow**  
+### Open Project Microflow  
 ![Open Projects Microflow](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/OpenProjectsMF.PNG)
 
-**Behavior**  
+### Behavior  
 ![Behavior](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/Behavior.PNG)
 
-**On Drop Mircoflow**  
+### On Drop Mircoflow  
 ![On Drop Microflow](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/OnDropMF.PNG)
 
-**Phase**  
+### Phase  
 ![Phase](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/Phase.PNG)
