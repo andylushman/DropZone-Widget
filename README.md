@@ -11,7 +11,6 @@ This widget is useful for:
 ![3 Widgets with attributes](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/3Widgets.PNG)
 
 ### New Object:
-**New Object**  
 ![New object](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/NewObject.PNG)
 
 ### Moving an object and changing the attribute:
