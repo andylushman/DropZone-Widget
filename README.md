@@ -10,7 +10,7 @@ This widget is useful for:
 
 
 ## Screenshots:
-**Example of 3 widgets setup with the attributes of Open, In Progress, and Closed:**  
+**Example of 3 widgets setup with Status attributes of Open, In Progress, and Closed:**  
 ![3 Widgets with attributes](https://github.com/andylushman/DropZone-Widget/blob/master/src/Screenshots/3Widgets.PNG)
 
 ### New Object:
